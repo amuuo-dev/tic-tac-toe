@@ -1,5 +1,6 @@
+import Board from "./assets/components/Board";
 const App = () => {
-  return <div>tic tac toe</div>;
+  return <Board />;
 };
 
 export default App;
