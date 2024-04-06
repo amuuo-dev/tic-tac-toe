@@ -1,6 +1,6 @@
-import Board from "./assets/components/Board";
+import Game from "./assets/components/Game";
 const App = () => {
-  return <Board />;
+  return <Game />;
 };
 
 export default App;
