@@ -2,21 +2,19 @@ import { useState } from "react";
 import Board from "./Board";
 
 const Game = () => {
-  const [xIsNext, setXIsNext] = useState(true);
   const [history, setHistory] = useState([Array(9).fill(null)]);
   const [currentMove, setCurrentMove] = useState(0);
+  const xIsNext = currentMove % 2 === 0;
   const currentSquares = history[currentMove];
 
   function handlePlay(nextSquares) {
     const newHistory = [...history.slice(0, currentMove + 1), nextSquares];
     setHistory(newHistory);
     setCurrentMove(newHistory.length - 1);
-    setXIsNext(!xIsNext);
   }
 
   function JumpTo(nextMove) {
     setCurrentMove(nextMove);
-    setXIsNext(nextMove % 2 === 0);
   }
 
   const moves = history.map((squares, move) => {
